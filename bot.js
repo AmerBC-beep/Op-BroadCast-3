@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "$"
-var adminprefix = '$'
+var prefix = "3"
+var adminprefix = '3'
 
 
 client.on("message", message => {
-    if (message.content.startsWith("$bc")) {
+    if (message.content.startsWith("3bc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -19,7 +19,7 @@ client.on("message", message => {
   
   
   client.on('message', message => {
-   if (message.content.startsWith("$bc")) {
+   if (message.content.startsWith("3bc")) {
       message.delete(1000);
       message.channel.send(message.content.slice(5, message.content.length));
    }
