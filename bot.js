@@ -18,14 +18,6 @@ client.on("message", message => {
   });
   
   
-  client.on('message', message => {
-   if (message.content.startsWith("3bc")) {
-      message.delete(1000);
-      message.channel.send(message.content.slice(5, message.content.length));
-   }
-});
-  
-  
 const developers = ["594419926899359746","381467210318610432"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
