@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "7"
-var adminprefix = '7'
+var prefix = "3"
+var adminprefix = '3'
 
-//broadcast
+ //broadcast
 
 client.on("message", message => {
-    if (message.content.startsWith("7bc")) {
+    if (message.content.startsWith(prefix + "bc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -17,12 +17,8 @@ client.on("message", message => {
   message.delete();
   };
   });
-  
-
 
  //online broadcast
-
- var prefix = "7";
 
   client.on("message", message => {
   
@@ -38,9 +34,8 @@ client.on("message", message => {
   };     
   });
 
-
  //status
-  
+
 const developers = ["594419926899359746","381467210318610432"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
