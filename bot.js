@@ -3,10 +3,10 @@ const client = new Discord.Client();
 var prefix = "3"
 var adminprefix = '3'
 
- //broadcast
+//BroadCast
 
 client.on("message", message => {
-    if (message.content.startsWith(prefix + "bc")) {
+    if (message.content.startsWith("3obc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -18,11 +18,13 @@ client.on("message", message => {
   };
   });
 
- //online broadcast
+//BroadCast online
+
+  var prefix = "3";
 
   client.on("message", message => {
   
-              if (message.content.startsWith(prefix + "obc")) {
+              if (message.content.startsWith(prefix + "bc")) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
@@ -34,9 +36,21 @@ client.on("message", message => {
   };     
   });
 
- //status
+//BroadCast all bot's DM
 
-const developers = ["594419926899359746","381467210318610432"]
+  client.on('message', message => {
+    if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('1adminbc')){
+if(!message.author.id === '476185102922285066') return;
+message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
+const developers = ["381467210318610432"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
